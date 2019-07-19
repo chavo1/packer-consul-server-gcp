@@ -1,0 +1,25 @@
+{
+    "builders": [{
+        "type": "googlecompute",
+        "project_id": "Your project ID",
+        "source_image_family": "ubuntu-1804-lts",
+        "zone": "us-east4-a",
+        "image_description": "packer-chavo",
+        "ssh_username": "ubuntu",
+        "tags": "consul",
+        "account_file": "account.json"
+    }],
+    "provisioners": [{
+            "type": "shell",
+            "inline": [
+                "ls -al /home/ubuntu"
+            ]
+        },
+        {
+            "type": "shell",
+            "execute_command": "sudo env {{ .Vars }} {{ .Path }} {{user `CONSUL`}}",
+            "scripts": ["./provision.sh"],
+            "expect_disconnect": true
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+---
+driver:
+  name: gce
+  project: <your project>
+  zone: us-east4-a
+  email: <email of your project>
+
+transport:
+  username: <the username which will be used for login>
+  ssh_key:
+    - ~/.ssh/id_rsa
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: ubuntu
+    driver: 
+      image_name: <the image that should be tested>
+      region: us-east4
+
+verifier:
+  name: inspec
+
+suites:
+- name: default

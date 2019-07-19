@@ -1,0 +1,6 @@
+terraform.tfvars
+.terraform/
+terraform*
+.kitchen
+Gemfile.lock
+account.json
