@@ -3,9 +3,8 @@
 
 ## Usage example:
 
-
+- Install [Packer](https://www.packer.io/)
 - Setup your [gcloud command-line tool](https://cloud.google.com/sdk/)
-
 - If you need the latest version of Consul - from your CLI execute a following command:
 
 ```
