@@ -31,9 +31,9 @@ bundle install
 Than simply execute a following commands:
 
 ```
-bundle kitchen converge
-bundle kitchen verify
-bundle kitchen destroy
+bundle exec kitchen converge
+bundle exec kitchen verify
+bundle exec kitchen destroy
 ```
 The result should be as follow
 ``` 
