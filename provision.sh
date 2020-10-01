@@ -39,7 +39,7 @@ which unzip jq wget &>/dev/null || {
 }
 
 if [ -z "$CONSUL" ]; then
-  CONSUL=`wget -qO-  https://releases.hashicorp.com/consul/index.json | jq -r '.versions[].version' | grep --extended-regexp --invert-match 'ent|beta|rc|alpha' | tail -1`
+  CONSUL=`wget -qO- https://releases.hashicorp.com/consul/index.json | jq -r '.versions[].version' | grep --extended-regexp --invert-match 'ent|beta|rc|alpha' | sort -V | tail -1`
 fi
 # check consul binary
 which consul || {
